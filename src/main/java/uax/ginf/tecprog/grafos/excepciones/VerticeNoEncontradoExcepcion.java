@@ -1,2 +1,4 @@
-package uax.ginf.tecprog.grafos.excepciones;public class VerticeNoEncontradoExcepcion {
+package uax.ginf.tecprog.grafos.excepciones;
+
+public class VerticeNoEncontradoExcepcion {
 }

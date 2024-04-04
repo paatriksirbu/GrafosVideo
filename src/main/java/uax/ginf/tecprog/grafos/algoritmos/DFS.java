@@ -1,2 +1,4 @@
-package uax.ginf.tecprog.grafos.algoritmos;public class DFS {
+package uax.ginf.tecprog.grafos.algoritmos;
+
+public class DFS {
 }

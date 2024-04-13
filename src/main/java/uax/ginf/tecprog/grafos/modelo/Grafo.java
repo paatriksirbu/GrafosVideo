@@ -33,15 +33,36 @@ public class Grafo {
     }
 
     public void deleteArista(Vertice origen, Vertice destino ) {
-        //
+        Set<Arista> aristas = adyacencias.get(origen);
+        if (aristas != null) {
+            aristas.removeIf(arista -> arista.getDestino().equals(destino));
+        }
+        if (!esDirigido) {
+            aristas = adyacencias.get(destino);
+            if (aristas != null) {
+                aristas.removeIf(arista -> arista.getDestino().equals(origen));
+            }
+        }
     }
 
     public void getAdyacentes(Vertice origen, Vertice destino ) {
-        //
+        Set<Arista> aristas = adyacencias.get(origen);
+        if(aristas != null) {
+            for (Arista arista : aristas){
+                System.out.println("Vertice adyacente desde: " + arista.getOrigen() + " hasta: " + arista.getDestino());
+            }
+        }
     }
 
     public void deleteVertice(Vertice vertice) {
-        //
+        adyacencias.remove(vertice);
+
+        for (Set<Arista> aristas : adyacencias.values()) {
+            aristas.removeIf(arista -> arista.getDestino().equals(vertice));
+            if (!esDirigido) {
+                aristas.removeIf(arista -> arista.getOrigen().equals(vertice));
+            }
+        }
     }
 
     @Override

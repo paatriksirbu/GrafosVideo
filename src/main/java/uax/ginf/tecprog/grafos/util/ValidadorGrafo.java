@@ -29,5 +29,14 @@ public class ValidadorGrafo {
         return grafo.getAdyacencias().isEmpty();
     }
 
-    // Aquí debes agregar más métodos
+    /*
+     * Metodo añadido que verifica si existen aristas entre dos vertices.
+     * @param grafo El grafo donde se buscará la arista.
+     * @param origen El vértice origen de la arista.
+     * @param destino El vértice destino de la arista.
+     * @return true si la arista existe, false en caso contrario.
+     */
+    public static boolean existeArista(Grafo grafo, Vertice origen, Vertice destino) {
+        return grafo.getAdyacencias().get(origen).contains(destino);
+    }
 }

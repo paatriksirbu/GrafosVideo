@@ -27,6 +27,7 @@ public class ValidadorGrafo {
      */
     public static boolean esGrafoVacio(Grafo grafo) {
         return grafo.getAdyacencias().isEmpty();
+
     }
 
     /*
